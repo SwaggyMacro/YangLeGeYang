@@ -7,7 +7,7 @@
 
 ## 📚使用教程
 ---
-使用前需要用抓包工具获取账号token(t)，需要一定动手能力，获取后就是傻瓜式操作。
-💻PC端抓包工具：Fiddler、Http Debugger
-📱Android端抓包工具：HttpCarry
-📱iPhone端抓包工具：Stream
+使用前需要用抓包工具获取账号token(t)，需要一定动手能力，获取后就是傻瓜式操作。  
+💻PC端抓包工具：Fiddler、Http Debugger  
+📱Android端抓包工具：HttpCarry  
+📱iPhone端抓包工具：Stream  
