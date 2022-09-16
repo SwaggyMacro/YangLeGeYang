@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -26,8 +27,19 @@ namespace SheepSheep
 
         private void init() {
             this.comboBox1.SelectedIndex = 0;
+            string token = GetTokenFromWechat();
+            if (token.Equals(""))
+            {
+                MessageBox.Show(this, "未检测到\"微信->羊了个羊\"，请重新登陆微信并打开羊了个羊游戏。\n仍然显示此提示的话请自行抓包获取Token。", "Tips:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else {
+                this.textBox1.Text = token;
+                MessageBox.Show(this, "检测到Token，已自动填写，请直接\"羊它！\"即可", "Tips:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
+        [DllImport("GetTokenFromWechat.dll")]
+        private static extern string GetTokenFromWechat();
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.passWay = this.comboBox1.SelectedIndex;
@@ -62,6 +74,7 @@ namespace SheepSheep
                         request.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.33";
                         request.Host = "cat-match.easygame2021.com";
                         request.Headers.Add("t", this.textBox1.Text);
+                        request.Timeout = 5000;
                         HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                         Stream myResponseStream = response.GetResponseStream();
                         StreamReader myStreamReader = new StreamReader(myResponseStream, Encoding.GetEncoding("utf-8"));
@@ -77,7 +90,10 @@ namespace SheepSheep
                             Console.WriteLine(retString);
                         }
                     }
-                    catch { }
+                    catch (Exception ex) {
+                        //throw ex;
+                    }
+                    
                 }
                 if (i == passTimes - 1) {
                     this.Invoke(new Action(() =>
