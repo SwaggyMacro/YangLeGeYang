@@ -16,7 +16,7 @@
 📱iPhone端抓包工具：Stream  
 
 ---
-
+(仅介绍PC抓包方式)
 此处以PC端（推荐PC）为例：
 1. 安装登陆微信 [PC微信官网](https://windows.weixin.qq.com/)
 2. 搜索羊了个羊小游戏（先不要点进去）
