@@ -8,6 +8,14 @@
 ## 📚使用教程
 
 **已更新v0.2自动获取Token版本（无需手动抓包），只需要你电脑登陆PC微信然后打开羊了个羊游戏，再打开本助手即可自动获取Token，直接开刷即可！**
+1. 登陆电脑版的PC微信
+2. 打开羊了个羊
+3. 打开本助手
+4. 一键通关
+
+
+---
+## 📚抓包版使用教程
 
 使用前需要用抓包工具获取账号token(t)，需要一定动手能力，获取后就是傻瓜式操作。  
 
@@ -19,8 +27,8 @@
 
 Android端抓包视频教程：[http://u.ncii.cn/LIgVd](http://u.ncii.cn/LIgVd)  
 iPhone端抓包视频教程：[http://u.ncii.cn/68dxv](http://u.ncii.cn/68dxv)  
-
 ---
+
 (仅介绍PC抓包方式)
 此处以PC端（推荐PC）为例：
 1. 安装登陆微信 [PC微信官网](https://windows.weixin.qq.com/)
