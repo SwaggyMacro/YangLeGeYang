@@ -27,6 +27,13 @@ namespace SheepSheep
 
         private void init() {
             this.comboBox1.SelectedIndex = 0;
+            getWechatToken();
+        }
+
+        [DllImport("GetTokenFromWechat.dll")]
+        static extern IntPtr GetTokenFromWechat();
+
+        private void getWechatToken() {
             string token = "";
             try
             {
@@ -37,14 +44,12 @@ namespace SheepSheep
             {
                 MessageBox.Show(this, "未检测到\"微信->羊了个羊\"，请重新登陆微信并打开羊了个羊游戏。\n仍然显示此提示的话请自行抓包获取Token。", "Tips:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else {
+            else
+            {
                 this.textBox1.Text = token;
                 MessageBox.Show(this, "检测到Token，已自动填写，请直接\"羊它！\"即可", "Tips:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-        [DllImport("GetTokenFromWechat.dll")]
-        static extern IntPtr GetTokenFromWechat();
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.passWay = this.comboBox1.SelectedIndex;
@@ -137,6 +142,11 @@ namespace SheepSheep
                     e.Handled = true;
                 }
             }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            getWechatToken();
         }
     }
 }
