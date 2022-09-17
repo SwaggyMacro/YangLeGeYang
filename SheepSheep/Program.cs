@@ -15,18 +15,9 @@ namespace SheepSheep
         [STAThread]
         static void Main()
         {
-            releaseDLL();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-        }
-
-        private static void releaseDLL() {
-            byte[] dll = global::SheepSheep.Properties.Resources.GetTokenFromWechat;
-            string path = Application.StartupPath + @"\GetTokenFromWechat.dll";
-            using (FileStream fs = new FileStream(path, FileMode.Create)) {
-                fs.Write(dll, 0, dll.Length);
-            }
         }
     }
 }
