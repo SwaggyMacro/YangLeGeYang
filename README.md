@@ -13,6 +13,7 @@
 3. 打开本助手
 4. 一键通关
 
+**一定要先打开羊了个羊再打开助手！**
 最新版本下载：[SheepSheep.exe](https://github.com/SwaggyMacro/YangLeGeYang/releases/latest)
 
 ---
