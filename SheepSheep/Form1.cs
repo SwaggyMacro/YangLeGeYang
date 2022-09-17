@@ -119,17 +119,24 @@ namespace SheepSheep
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (state == 0)
+            if (!this.textBox1.Text.Equals(""))
             {
-                state = 1;
-                Thread t = new Thread(() => passTheGame(int.Parse(this.textBox2.Text)));
-                t.Start();
-                this.button1.Text = "停止羊！";
-                MessageBox.Show(this, "开始羊咯！", "Tips:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (state == 0)
+                {
+                    state = 1;
+                    Thread t = new Thread(() => passTheGame(int.Parse(this.textBox2.Text)));
+                    t.Start();
+                    this.button1.Text = "停止羊！";
+                    MessageBox.Show(this, "开始羊咯！", "Tips:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    state = 0;
+                    this.button1.Text = "羊它！";
+                }
             }
             else {
-                state = 0;
-                this.button1.Text = "羊它！";
+                MessageBox.Show(this, "未填写Token，请点击\"获取Token\"后再\"羊它！\"", "Tips:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
