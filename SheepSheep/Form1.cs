@@ -28,7 +28,8 @@ namespace SheepSheep
 
         private void init() {
             this.comboBox1.SelectedIndex = 0;
-            getWechatToken();
+            Thread t = new Thread(() => getWechatToken());
+            t.Start();
         }
 
 
@@ -37,12 +38,18 @@ namespace SheepSheep
             token = WcToken.GetTokenFromWechat();
             if (token.Equals("false"))
             {
-                MessageBox.Show(this, "未检测到\"微信->羊了个羊\"，请重新登陆微信并打开羊了个羊游戏。\n仍然显示此提示的话请自行抓包获取Token。", "Tips:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Invoke(new Action(() =>
+                {
+                    MessageBox.Show(this, "未检测到\"微信->羊了个羊\"，请重新登陆微信并打开羊了个羊游戏。\n仍然显示此提示的话请自行抓包获取Token。", "Tips:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }));
             }
             else
             {
-                this.textBox1.Text = token;
+                this.Invoke(new Action(() =>
+                {
+                    this.textBox1.Text = token;
                 MessageBox.Show(this, "检测到Token，已自动填写，请直接\"羊它！\"即可", "Tips:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }));
             }
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
