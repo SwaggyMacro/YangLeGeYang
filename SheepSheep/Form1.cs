@@ -59,7 +59,6 @@ namespace SheepSheep
         private void passTopicGame(int passTimes)
         {
             string apiUrl = string.Format("https://cat-match.easygame2021.com/sheep/v1/game/topic_game_over?rank_score=1&rank_state=1&rank_time={0}&rank_role=1&skin=1", costTime);
-            string json = "";
             for (int i = 0; i < passTimes; i++)
             {
                 if (stateTopic == 0)
@@ -114,7 +113,6 @@ namespace SheepSheep
 
         private void passTheGame(int passTimes) {
             string apiUrl = string.Format("https://cat-match.easygame2021.com/sheep/v1/game/game_over?rank_score=1&rank_state=1&rank_time={0}&rank_role=1&skin=1", costTime);
-            string json = "";
             for (int i = 0; i < passTimes; i++)
             {
                 if (stateGame == 0) {
