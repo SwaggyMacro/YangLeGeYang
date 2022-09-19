@@ -118,8 +118,10 @@ namespace SheepSheep
             }
         }
 
+
         private void passTheGame(int passTimes) {
-            string apiUrl = string.Format("https://cat-match.easygame2021.com/sheep/v1/game/game_over?rank_score=1&rank_state=1&rank_time={0}&rank_role=1&skin=1", costTime);
+            //string apiUrl = string.Format("https://cat-match.easygame2021.com/sheep/v1/game/game_over?rank_score=1&rank_state=1&rank_time={0}&rank_role=1&skin=1", costTime);
+            string apiUrl = string.Format("https://cat-match.easygame2021.com/sheep/v1/game/game_over_ex?rank_score=1&rank_state=1&rank_time={0}&rank_role=1&skin=1", costTime);
             for (int i = 0; i < passTimes; i++)
             {
                 if (stateGame == 0) {
@@ -132,11 +134,19 @@ namespace SheepSheep
                         Random r = new Random();
                         costTime = r.Next(0, 3000).ToString();
                         HttpWebRequest request = (HttpWebRequest)WebRequest.Create(apiUrl);
-                        request.Method = "GET";
+                        request.Method = "POST";
                         request.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.33";
                         request.Host = "cat-match.easygame2021.com";
                         request.Headers.Add("t", this.textBox1.Text);
                         request.Timeout = 5000;
+                        request.ContentType = "application/json;charset=utf-8";
+                        string postParam = postParam = $"{{\"rank_score\":1,\"rank_state\":1,\"rank_time\":{costTime},\"rank_role\":1,\"skin\":1,\"MatchPlayInfo\":\"TpjYXRfbWF0Y2g6bHQxMjM0NTYiLCJvcGVuX2lkIjoiIiwidWlkIjo5MzIxNTgsImR\"}}";
+                        Console.WriteLine(postParam);
+                        byte[] postBody = Encoding.UTF8.GetBytes(postParam);
+                        request.ContentLength = postBody.Length;
+                        Stream postStream = request.GetRequestStream();
+                        postStream.Write(postBody, 0, postBody.Length);
+                        postStream.Close();
                         HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                         Stream myResponseStream = response.GetResponseStream();
                         StreamReader myStreamReader = new StreamReader(myResponseStream, Encoding.GetEncoding("utf-8"));
@@ -149,8 +159,8 @@ namespace SheepSheep
                             {
                                 toolStripStatusLabel1.Text = "加入次数: " + (i+1).ToString();
                             }));
-                            Console.WriteLine(retString);
                         }
+                        Console.WriteLine(retString);
                     }
                     catch (Exception ex) {
                         //throw ex;
