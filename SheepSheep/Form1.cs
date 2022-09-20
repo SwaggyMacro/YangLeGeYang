@@ -220,7 +220,7 @@ namespace SheepSheep
 
         private void label4_Click(object sender, EventArgs e)
         {
-            getWechatToken();
+            new Thread(() => getWechatToken()).Start();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
