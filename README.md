@@ -8,7 +8,7 @@
 **不会更新多线程版本，对游戏服务器压力过大。**
 
 ## 📥助手下载
-⭐最新版本下载：[https://github.com/SwaggyMacro/YangLeGeYang/releases/latest/download/SheepSheep.exe](https://github.com/SwaggyMacro/YangLeGeYang/releases/latest/download/SheepSheep.exe)
+⭐最新版本下载：[羊了个羊助手SheepSheep.exe](https://github.com/SwaggyMacro/YangLeGeYang/releases/latest/download/SheepSheep.exe)
 
 ## 📚使用教程
 
