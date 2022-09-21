@@ -10,6 +10,13 @@
 ## 📥助手下载
 ⭐最新版本下载：[羊了个羊助手SheepSheep.exe](https://github.com/SwaggyMacro/YangLeGeYang/releases/latest/download/SheepSheep.exe)
 
+## 🙋FAQ/常见问题
+<details><summary>1. 为什么无法获取Token</summary>
+① 可能是微信版本太老，请尝试安装最新版本微信，[https://windows.weixin.qq.com/](https://windows.weixin.qq.com/)。  
+
+② 需要在微信搜索打开羊了个羊并授权微信信息才行，不知道怎么授权的就直接玩一下第一关再
+</details>
+
 ## 📚使用教程
 
 **已更新v0.6自动获取Token版本（无需手动抓包）**  
