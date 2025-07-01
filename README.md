@@ -57,3 +57,8 @@ iPhone端抓包视频教程：[http://u.ncii.cn/68dxv](http://u.ncii.cn/68dxv)
    ![image](https://user-images.githubusercontent.com/38845682/190595519-9188c778-2cba-4bc4-98a7-854b4021a61b.png)
 6. 将Token复制到羊了个羊助手上面，然后点击“羊它！”即可，通关次数以及通关耗时可以自己调整。
    ![image](https://user-images.githubusercontent.com/38845682/190595932-05c04298-1726-45e8-bca8-b9d56e63ae3a.png)
+
+## 赞助商
+该项目的CDN加速和安全防护由腾讯EdgeOne赞助。  
+[Best Asian CDN, Edge, and Secure Solutions - Tencent EdgeOne](https://edgeone.ai/?from=github)  
+![EdgeOne](https://edgeone.ai/_next/static/media/headLogo.daeb48ad.png?auto=format&fit=max&w=256)
